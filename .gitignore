@@ -1,0 +1,8 @@
+.venv/
+.vercel/
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.sqlite3-journal
+backend/instance/
+backend/database/

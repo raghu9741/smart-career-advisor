@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: smart-career-advisor-backend
+    runtime: docker
+    plan: starter
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: FLASK_APP
+        value: backend.app
+      - key: SCA_DATABASE_URI
+        fromDatabase:
+          name: smart-career-advisor-db
+          property: connectionString
+      - key: SCA_ADMIN_USERNAME
+        sync: false
+      - key: SCA_ADMIN_PASSWORD
+        sync: false
+      - key: RAPIDAPI_KEY
+        sync: false
+      - key: RAPIDAPI_HOST
+        value: jsearch.p.rapidapi.com
+
+databases:
+  - name: smart-career-advisor-db
+    plan: basic-256mb
+    databaseName: smart_career_advisor
+    region: oregon

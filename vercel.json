@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "smart-career-advisor/smart-c-advisor",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://smart-career-advisor-backend.onrender.com/api/:path*"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "https://smart-career-advisor-backend.onrender.com/admin/:path*"
+    },
+    {
+      "source": "/student/:path*",
+      "destination": "https://smart-career-advisor-backend.onrender.com/student/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "https://smart-career-advisor-backend.onrender.com/health"
+    },
+    {
+      "source": "/login",
+      "destination": "https://smart-career-advisor-backend.onrender.com/login"
+    },
+    {
+      "source": "/logout",
+      "destination": "https://smart-career-advisor-backend.onrender.com/logout"
+    },
+    {
+      "source": "/register",
+      "destination": "https://smart-career-advisor-backend.onrender.com/register"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
